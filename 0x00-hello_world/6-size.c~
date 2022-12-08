@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+
+ *
+ *Return: return 0 if code runs succesfully
+ */
+int main(void)
+{
+char sun;
+int man;
+long int dan;
+long long int ran;
+float mill;
+
+printf("Size of a char: %li byte(s)\n", sizeof(sun));
+printf("Size of an int: %li byte(s)\n", sizeof(man));
+printf("Size of a long int: %li byte(s)\n", sizeof(dan));
+printf("Size of a long long int: %li byte(s)\n", sizeof(ran));
+printf("Size of a float: %li byte(s)\n", sizeof(mill));
+return (0);
+}
