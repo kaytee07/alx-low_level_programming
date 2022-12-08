@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 /**
- * main: Prints ""Programming is like bulilding a multilingual puzzle"
- *
- * return: 0 if function is succesful 
+ * main - Prints string
+ * Return: 0 if main runs succesfully, non zero if otherwise 
  */
 int main(void)
 {
