@@ -1,0 +1,1 @@
+This directory will hold all my alc projects on how to set up, execute a c program
