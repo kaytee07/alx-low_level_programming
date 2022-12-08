@@ -1,7 +1,9 @@
-/*display a string to the terminal followed by a new line*/
 
 #include <stdio.h>
 
+/**
+ * main: print programming is like building a multilingual puzzle
+ */
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
