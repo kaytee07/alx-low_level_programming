@@ -1,8 +1,9 @@
-
 #include <stdio.h>
 
 /**
- * main: print programming is like building a multilingual puzzle
+ * main: print a string
+ *
+ * return: 0 if function is succesful 
  */
 int main(void)
 {
