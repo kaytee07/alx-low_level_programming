@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main: print a string
+ * main: "Programming is like bulilding a multilingual puzzle
  *
  * return: 0 if function is succesful 
  */
