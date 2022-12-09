@@ -21,7 +21,7 @@ putchar((firstnum % 10) + '0');
 putchar(' ');
 putchar((secondnum / 10) + '0');
 putchar((secondnum % 10) + '0');
-if (firstnum < 99)
+if (firstnum <= 97)
 {
 putchar(',');
 putchar(' ');
@@ -30,5 +30,6 @@ putchar(' ');
 }
 
 }
+putchar('\n');
 return (0);
 }
