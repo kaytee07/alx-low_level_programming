@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+
+/**
+ *main - print all the numbers of base 16 in lower case
+ *
+ *Return: 0 means vode successfully runned
+ */
+
+int main(void)
+{
+int num;
+for(num = 0 ; num <= 15 ; num++)
+printf("%x", num);
+putchar('\n'); 
+return (0);
+}
