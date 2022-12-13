@@ -12,15 +12,3 @@ for (i = 'a'; i <= 'z'; i++)
 _putchar(i);
 _putchar('\n');
 }
-
-/**
- * main - calls print_alphabet function
- *
- *Return: 0
- */
-
-int main(void)
-{
-print_alphabet();
-return (0);
-}
