@@ -2,19 +2,26 @@
 #include <stdio.h>
 
 
+/**
+ * times_table - print the 9 times table
+ *
+ *
+ *
+ */
+
 
 void times_table(void)
 {
 int i;
 int j;
 int q;
-q= 0;
+q = 0;
 
-for(i = 0 ; i <= 9 ; i++)
+for (i = 0 ; i <= 9 ; i++)
 {
-for(j = 0 ; j <= 9 ; j++)
+for (j = 0 ; j <= 9 ; j++)
 {
-if(j == 0)
+if (j == 0)
 q = 0;
 else
 q = q + i;
@@ -31,6 +38,6 @@ printf(", ");
 }
 }
 }
- printf("\n");
+printf("\n");
 }
 }
