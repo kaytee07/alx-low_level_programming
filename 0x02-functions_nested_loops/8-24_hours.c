@@ -5,7 +5,8 @@
 void jack_bauer(void)
 {
 time_t seconds;
-struct tm *timestruct;
+struct tm *timeStruct;
 seconds = time(NULL);
-printf("%d:%d", timeStruct->tm_hour, timeStruct->tm_min);
+timeStruct = localtime(&seconds);
+printf("%d:%d\n", timeStruct->tm_hour, timeStruct->tm_min);
 }
