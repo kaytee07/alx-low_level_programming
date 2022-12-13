@@ -31,6 +31,6 @@ printf(", ");
 }
 }
 }
-_putchar('\n');
+ printf("\n");
 }
 }
