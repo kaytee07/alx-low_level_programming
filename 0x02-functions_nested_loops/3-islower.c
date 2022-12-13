@@ -11,7 +11,7 @@
 
 int _islower(int c)
 {
-if(isupper(c))
+  if(isupper(c) && isalpha(c))
 {
 return (0);
 }else{
