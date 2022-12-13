@@ -10,17 +10,19 @@
 
 int print_last_digit(int a)
 {
+  int n;
 if (a < 0)
-a = -a;
-
-putchar((a % 10) + '0');
-return (a % 10);
-}
-
-int main()
 {
-putchar(print_last_digit(INT_MIN)+ '0');
- putchar('\n');
-return 0;
+a = -a;
 }
+
+n = a % 10;
+if(n < 0)
+{
+  n = -n;
+}
+_putchar(n + '0');
+return (n);
+}
+
 
