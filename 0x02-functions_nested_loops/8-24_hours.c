@@ -2,6 +2,13 @@
 #include <time.h>
 #include "main.h"
 
+
+
+/**
+ * jack_bauer - print every minute within the day
+ *
+ *
+ */
 void jack_bauer(void)
 {
 int i;
