@@ -12,14 +12,14 @@ q= 0;
 
 for(i = 0 ; i <= 9 ; i++)
 {
-q=0;
-printf("%d,  ", q);
-for(j = 0 ; j < 9 ; j++)
+for(j = 0 ; j <= 9 ; j++)
 {
+if(j == 0)
+q = 0;
+else
 q = q + i;
 printf("%d", q);
-
-if (j < 8)
+if (j <= 8)
 {
 if (q <= 9)
 {
@@ -34,5 +34,3 @@ printf(", ");
 _putchar('\n');
 }
 }
-
-
