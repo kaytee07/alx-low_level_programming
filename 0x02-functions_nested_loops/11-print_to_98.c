@@ -3,7 +3,7 @@
 #include "main.h"
 /**
  *print_to_98 - print from argument to 98
- *@n - argument representing starting point of loop
+ *@n: argument representing starting point of loop
  *
  *
  */
@@ -15,9 +15,9 @@ if (n > 98)
 {
 for (i = n ; i >= 98 ; i--)
 {
-printf("%d", i);  
+printf("%d", i);
 if (i > 98)
-printf(", "); 
+printf(", ");
 }
 }
 else if (n < 98)
@@ -31,9 +31,8 @@ printf(", ");
 }
 }
 else
-printf("%d", n);
-  
-   
+printf("%d", n);  
+
 putchar('\n');
 }
 
