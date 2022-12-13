@@ -4,9 +4,20 @@
 
 void jack_bauer(void)
 {
-time_t seconds;
-struct tm *timeStruct;
-seconds = time(NULL);
-timeStruct = localtime(&seconds);
-printf("%d:%d\n", timeStruct->tm_hour, timeStruct->tm_min);
+int i;
+int j;
+for (i = 0; i < 24 ; i++)
+{
+for (j = 0; j < 60; j++)
+{
+putchar((i / 10) + '0');
+putchar((i % 10) + '0');
+putchar(':');
+putchar((j / 10) + '0');
+putchar((j % 10) + '0');
+putchar('\n');
 }
+}
+}
+
+
