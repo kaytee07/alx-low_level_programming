@@ -1,16 +1,16 @@
 #include <ctype.h>
 #include <stdio.h>
 #include "_putchar.h"
+#include "main.h"
+int _isalpha(int c);
 
 
 /**
- * _isalpha - print 1 if argument is a letter and 0 if otherwise
+ *main - call the _isapha function
  *
- * main - call the _isalpha function
- * return: 0
+ *
+ *Return: 0
  */
-
-int _isalpha(int c);
 
 int main(void)
 {
@@ -21,13 +21,22 @@ _putchar('\n');
 return (0);
 }
 
+/**
+ *_isalpha - check if argument is a letter
+ *@c: first argument
+ *
+ *Return: 1 if argument is an alphabet 0 if otherwise
+ *
+ */
 
 int _isalpha(int c)
 {
 if (isalpha(c))
 {
 return (1);
-}else{
+}
+else
+{
 return (0);
 }
 }
