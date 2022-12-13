@@ -20,11 +20,16 @@ q = q + i;
 printf("%d", q);
 
 if (j < 8)
+{
 if (q <= 9)
+{
 printf(",  ");
+}
 else
+{
 printf(", ");
-
+}
+}
 }
 _putchar('\n');
 }
