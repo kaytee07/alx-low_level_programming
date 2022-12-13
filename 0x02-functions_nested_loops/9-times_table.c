@@ -25,19 +25,22 @@ if (j == 0)
 q = 0;
 else
 q = q + i;
-printf("%d", q);
-if (j <= 8)
+if(q == 0 && j == 0)
 {
-if (q <= 9)
-{
-printf(",  ");
+  printf("%d", q);
 }
 else
 {
+printf("%2d", q);
+}
+if (j < 9)
 printf(", ");
-}
-}
 }
 printf("\n");
 }
+}
+
+int main()
+{
+  times_table();
 }
