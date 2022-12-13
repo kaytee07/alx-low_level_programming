@@ -15,6 +15,7 @@ for (i = 'a'; i <= 'z'; i++)
 {
 _putchar(i);
 }
+if (j < 10)
 _putchar('\n');
 }
 }
