@@ -2,7 +2,7 @@
 
 /**
  * print_sign - print the sign of a number
- * @a: parameter to check for sign
+ * @n: parameter to check for sign
  *
  * Return: 1 when is greater than zero
  * 0 when n is zero
@@ -16,11 +16,13 @@ if (n > 0)
 {
 _putchar('+');
 return (1);
-} else if (n == 0)
+}
+else if (n == 0)
 {
 _putchar(48);
 return (0);
-} else if (n < 0)
+}
+else if (n < 0)
 {
 _putchar('-');
 }

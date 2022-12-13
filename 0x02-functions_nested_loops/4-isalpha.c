@@ -3,7 +3,7 @@
 
 /**
  *_isalpha - return 1 if it's an alphabet and 0 if otherwise
- *@c: accept only letters 
+ *@c: accept only letters
  *
  *Return: 0 if it's an alphabet and 1 if otherwise
  */
