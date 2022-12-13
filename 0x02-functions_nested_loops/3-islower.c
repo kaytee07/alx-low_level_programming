@@ -1,17 +1,13 @@
 #include <stdio.h>
 #include <ctype.h>
-#include "_putchar.h"
 #include "main.h"
-int _islower(int c);
 
-int main(void)
-{
-int r;
-r = _islower('h');
-_putchar(r + '0');
-_putchar('\n');
-  return (0);
-}
+/**
+ *_islower - check if alphabet is lower case
+ *
+ *
+ *Return: 0 if it is lowercase, 1 if otherwise
+ */
 
 int _islower(int c)
 {
@@ -19,6 +15,6 @@ if(isupper(c))
 {
 return (0);
 }else{
-return(1);
+return (1);
 }
 }
