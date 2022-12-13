@@ -40,7 +40,4 @@ printf("\n");
 }
 }
 
-int main()
-{
-  times_table();
-}
+
