@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "_putchar.h"
+#include "main.h"
 /**
  * print_alphabet - print lowercase a to z
  *
