@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include "main.h"
+
+
+int _abs(int)
+{
+if(a > 0)
+{
+return (n);
+}
+return(-n);
+}

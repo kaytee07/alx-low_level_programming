@@ -13,13 +13,14 @@ int print_last_digit(int a)
 if (a < 0)
 a = -a;
 
-_putchar((a % 10) + '0');
+putchar((a % 10) + '0');
 return (a % 10);
 }
 
 int main()
 {
-print_last_digit(INT_);
+putchar(print_last_digit(INT_MIN)+ '0');
+ putchar('\n');
 return 0;
 }
 
