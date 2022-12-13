@@ -11,12 +11,11 @@
 
 int _islower(int c)
 {
-if(isupper(c) && isalpha(c))
-{
-return (0);
-}
-else if(!isalpha(c) && !isupper(c))
+if(isalpha(c) && isupper(c))
+return (0)
+else
 {
 return (1);
-}
+}   
+   
 }
