@@ -17,7 +17,7 @@ if (n < 98)
 _putchar(',');
 _putchar(' ');
 }
-n++
+ n++;
 }
 _putchar('\n');
 }
