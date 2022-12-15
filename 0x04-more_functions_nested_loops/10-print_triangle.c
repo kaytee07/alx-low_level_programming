@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 
 
 
@@ -9,6 +9,12 @@
  */
 
 void print_triangle(int size)
+{
+if(size <= 0)
+{
+_putchar('\n');
+}
+else
 {
 int j;
 int i;
@@ -31,5 +37,5 @@ _putchar(' ');
 _putchar('\n');
 }
 }
-
+}
 
