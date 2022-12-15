@@ -20,12 +20,12 @@ for (j = 1; j <= size; j++)
 {
 if (k && j > size - k)
 {
-putchar('#');
+_putchar('#');
 k--;
 }
 else
 {
-putchar(' ');
+_putchar(' ');
 }
 }
 _putchar('\n');
