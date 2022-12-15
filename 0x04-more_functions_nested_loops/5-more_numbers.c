@@ -12,7 +12,7 @@ void printnum(int n)
 {
 if (n / 10 != 0)
 printnum(n / 10);
-_putchar((n % 10) + '0');
+putchar((n % 10) + '0');
 }
 
 
@@ -26,7 +26,7 @@ void more_numbers(void)
 {
 int i;
 int j;
-for (i = 0 ; i <= 10 ; i++)
+for (i = 0 ; i <= 9 ; i++)
 {
 for (j = 0; j <= 14 ; j++)
 {
@@ -36,10 +36,16 @@ printnum(j);
 }
 else
 {
-_putchar(j + '0');
+putchar(j + '0');
 }
 }
-_putchar('\n');
+ putchar('\n');
 }
+}
+
+int main()
+{
+  more_numbers();
+  return (0);
 }
 
