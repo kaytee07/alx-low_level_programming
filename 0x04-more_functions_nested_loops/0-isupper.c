@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <ctype.h>
+#include "main.h"
+
+
+/**
+ * _isupper - check if argument passed is uppercase
+ * @c: first argument
+ *
+ * Return: 1 if uppercase, 0 if otherwise
+ */
+
+
+int _isupper(int c)
+{
+if (isupper(c))
+{
+return (1);
+}
+else
+{
+return (0);
+}
+}
