@@ -1,13 +1,11 @@
 #include "main.h"
-#include <stdio.h>
+
 
 
 
 /**
  * print_triangle - function print triangle
  * @size: first parameter
- *
- *
  */
 
 void print_triangle(int size)
