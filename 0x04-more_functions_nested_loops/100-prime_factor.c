@@ -11,23 +11,31 @@
 int main(void)
 {
 long int n;
+long int max;
+long int i;
+
 n = 612852475143;
-long int div = 2, ans = 0, maxFact;
-while (n != 0)
+max = -1;
+
+while (n % 2 == 0)
 {
-if (n % div != 0)
-div = div + 1;
-else
+max = 2;
+n /= 2;
+}
+
+for (i = 3; i <= sqrt(n); i = i + 2)
 {
-maxFact = n;
-n = n / div;
-if (n == 1)
+while (n % i == 0)
 {
-printf("%ld\n", maxFact);
-ans = 1;
-break;
+max = i;
+n = n / i;
 }
 }
-}
+
+if (n > 2)
+max = n;
+
+printf("%ld\n", max);
+
 return (0);
 }
