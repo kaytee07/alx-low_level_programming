@@ -12,7 +12,7 @@ void printnum(int n)
 {
 if (n / 10 != 0)
 printnum(n / 10);
-putchar((n % 10) + '0');
+_putchar((n % 10) + '0');
 }
 
 
@@ -36,16 +36,11 @@ printnum(j);
 }
 else
 {
-putchar(j + '0');
+_putchar(j + '0');
 }
 }
- putchar('\n');
+_putchar('\n');
 }
 }
 
-int main()
-{
-  more_numbers();
-  return (0);
-}
 
