@@ -1,0 +1,27 @@
+#include "main.h"
+#include <stdio.h>
+#include <string.h>
+
+
+
+/**
+ * puts_half - print half of a string
+ * @str: first parameter
+ *
+ *
+ */
+
+void puts_half(char *str)
+{
+int half;
+if (strlen(str) % 2 == 0)
+{
+half = strlen(str) / 2;
+puts(str + half);
+}
+else
+{
+half = (strlen(str) - 1) / 2;
+puts(str + half);
+}
+}
