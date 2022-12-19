@@ -20,12 +20,3 @@ putchar(s[i]);
 }
 putchar('\n');
 }
-
-int main(void)
-{
-    char *str;
-
-    str = "Holberton!";
-    print_rev(str);
-    return (0);
-}
