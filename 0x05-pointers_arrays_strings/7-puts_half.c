@@ -17,11 +17,11 @@ int half;
 if (strlen(str) % 2 == 0)
 {
 half = strlen(str) / 2;
-puts(str + half);
+puts(str + half - 1);
 }
 else
 {
 half = (strlen(str) - 1) / 2;
-puts(str + half);
+puts(str + half - 1);
 }
 }
