@@ -17,8 +17,8 @@ char reverse[strlen(s)];
 int i;
 for (i = strlen(s) ; i >= 0 ; i--)
 {
-putchar(s[i]);
+_putchar(s[i]);
 }
-putchar('\n');
+_putchar('\n');
 }
 
