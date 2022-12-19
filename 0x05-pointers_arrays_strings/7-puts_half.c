@@ -13,15 +13,18 @@
 
 void puts_half(char *str)
 {
-int half;
-if (strlen(str) % 2 == 0)
+int l, n;
+
+for (l = 0; str[l] != '\0'; ++l)
+if (l % 2 == 0)
 {
-half = strlen(str) / 2;
-puts(str + half - 1);
+for (n = l / 2; str[n] != '\0'; ++n)
+_putchar(str[n]);
 }
 else
 {
-half = (strlen(str) - 1) / 2;
-puts(str + half - 1);
+for (n = ((l - 1) / 2) + 1; str[n] != '\0'; ++n)
+_putchar(str[n]);
 }
+_putchar('\n');
 }
