@@ -14,10 +14,18 @@
 void print_rev(char *s)
 {
 int i;
-for (i = strlen(s) ; i >= 0 ; i--)
+for (i = strlen(s) - 1 ; i >= 0 ; i--)
 {
-_putchar(s[i]);
+putchar(s[i]);
 }
-_putchar('\n');
+putchar('\n');
 }
 
+int main(void)
+{
+    char *str;
+
+    str = "Holberton!";
+    print_rev(str);
+    return (0);
+}

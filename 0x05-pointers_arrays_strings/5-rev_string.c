@@ -11,16 +11,16 @@
 
 void rev_string(char *s)
 {
-  char reverse[10];  
-int i;
-int j;
-j = 0;
-for (i = strlen(s) - 1; i >= 0; i--)
+int l, i;
+char ch;
+for (l = 0; s[l] != '\0'; ++l)
+;
+for (i = 0; i < l / 2; ++i)
 {
-reverse[j] = s[i];
-j++;
+ch = s[i];
+s[i] = s[l - 1 - i]; /*-1 because the array starts from 0*/
+s[l - 1 - i] = ch;
 }
-reverse[j] = '\0';
-strcpy(s, reverse);
+
 }
 
