@@ -13,7 +13,6 @@
 
 void print_rev(char *s)
 {
-char reverse[strlen(s)];
 int i;
 for (i = strlen(s) ; i >= 0 ; i--)
 {
