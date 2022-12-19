@@ -11,10 +11,10 @@
 
 void rev_string(char *s)
 {
+  char reverse[10];  
 int i;
 int j;
 j = 0;
-char reverse[strlen(s) + 1];
 for (i = strlen(s) - 1; i >= 0; i--)
 {
 reverse[j] = s[i];
