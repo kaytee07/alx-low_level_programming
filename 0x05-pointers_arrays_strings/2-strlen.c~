@@ -1,0 +1,26 @@
+#include "main.h"
+#include <stdio.h>
+#include <string.h>
+
+
+/**
+ * _strlen - print the lenght of the string
+ *
+ *
+ */
+int _strlen(char *s)
+{
+return (strlen(s));
+}
+
+
+int main(void)
+{
+    char *str;
+    int len;
+
+    str = "My first strlen!";
+    len = _strlen(str);
+    printf("%d\n", len);
+    return (0);
+}
