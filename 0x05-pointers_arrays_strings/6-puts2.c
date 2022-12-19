@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <string.h>
 
-
+/**
+ * puts2 - print all strings at even position
+ * @str: first parameter
+ *
+ */
 
 void puts2(char *str)
 {
