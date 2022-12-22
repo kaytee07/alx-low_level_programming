@@ -12,12 +12,13 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-int i = 0, j = 0; 
-if(n > sizeof(src))
+int i = 0, j = 0;
+int size = sizeof(src);
+if (n > size)
 {
-while(src[i] != '\0')
+while (src[i] != '\0')
 {
-if(dest[j] == '\0' || !dest[j])
+if (dest[j] == '\0' || !dest[j])
 {
 dest[j] = src[i];
 i++;
@@ -27,9 +28,9 @@ j++;
 }
 else
 {
-while(i < n)
+while (i < n)
 {
-if(dest[j] == '\0' || !dest[j])
+if (dest[j] == '\0' || !dest[j])
 {
 dest[j] = src[i];
 i++;
@@ -40,6 +41,7 @@ j++;
 dest[j] = '\0';
 return (dest);
 }
+
 
 
 

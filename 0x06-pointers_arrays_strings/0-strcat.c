@@ -12,9 +12,9 @@
 char *_strcat(char *dest, char *src)
 {
 int i = 0, j = 0;
-while(src[i] != '\0')
+while (src[i] != '\0')
 {
-if(dest[j] == '\0' || !dest[j])
+if (dest[j] == '\0' || !dest[j])
 {
 dest[j] = src[i];
 i++;
@@ -24,4 +24,5 @@ j++;
 dest[j] = '\0';
 return (dest);
 }
+
 
