@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <string.h>
 
 /**
  * _strstr - function that locates a substring
@@ -9,6 +8,10 @@
  * Return: pointer of first char of match
  *
  */
+
+char *_strstr(char *haystack, char *needle)
+{
+char *h, *n;
 
 while (*haystack != '\0')
 {
@@ -20,11 +23,8 @@ haystack++;
 n++;
 }
 if (!*n)
-{
 return (h);
-}
 haystack++;
 }
 return ('\0');
 }
-
