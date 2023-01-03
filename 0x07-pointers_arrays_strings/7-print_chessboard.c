@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
- *
- *
+ * print_chessboard - print the values of 2d array
+ * @a: 2d arrays of chars
  *
  *
  *
