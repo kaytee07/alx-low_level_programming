@@ -21,6 +21,20 @@ break;
 i++;
 }
 
-return (s[i] == '\0' ? NULL : &s[i]);
+ return (s[i] == c ? &s[i] : NULL);
+}
+
+int main(void)
+{
+    char *s = "hello";
+    char *f;
+
+    f = _strchr(s, 'l');
+
+    if (f != NULL)
+    {
+        printf("%s\n", f);
+    }
+    return (0);
 }
 
