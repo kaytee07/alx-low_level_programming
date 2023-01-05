@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * _isprime - checks if second parameter is a prime number
+ * @k: numbers less than n to check if n is prime
+ * @n: check if this params is a prime number
+ * Return: recursing function
+ */
+
+int _isprime(int k, int n)
+{
+if (k == n)
+{
+return (1);
+}
+else if (k < n)
+{
+if (n % k == 0)
+{
+return (0);
+}
+}
+else
+{
+return (0);
+}
+return (_isprime(k + 1, n));
+}
+
+/**
+ * is_prime_number - checks if number is prime
+ * @n: number to check if prime
+ * Return: 1 if prime, 0 if otherwise
+ */
+int is_prime_number(int n)
+{
+if (n == 1)
+{
+return (0);
+}
+return (_isprime(2, n));
+}
