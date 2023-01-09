@@ -1,0 +1,42 @@
+#include "main.h"
+#include <stdio.h>
+#include <ctype.h>
+
+/**
+ * 
+ *
+ *
+ *
+ */
+
+int _isdigit(int c)
+{
+int i;
+int j;
+i = 0;
+j = 0;
+for(i = 0 ; i < 10 ; i++)
+{
+  if(i == (
+	   int)c)
+{
+j = 1;
+break;
+}
+}
+
+if(j == 1)
+return (1);
+else
+return (0);
+
+}
+
+int main(){
+  char c;
+  c = '0';
+  printf("%c: %d\n", c, _isdigit(c));
+  c = 'a';
+  printf("%c: %d\n", c, _isdigit(c));
+  return (0);
+}

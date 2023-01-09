@@ -1,0 +1,36 @@
+#include "main.h"
+#include <stdio.h>
+#include <string.h>
+
+
+unsigned int _strspn(char *s, char *accept)
+{
+  int i;
+  int j;
+ long unsigned int k = 1;
+  for(i = 0; s[i] != '\0'; i++)
+    {
+      for(j = 0; accept[j] != '\0'; j++)
+	{
+	  if(accept[j] == s[j])
+	    {
+	      k++;
+	      continue;
+	    }
+	}
+    }
+  printf("%ld\n", k);
+  return (k);
+}
+
+
+int main(void)
+{
+    char *s = "helo, word";
+    char *f = "olleh";
+    unsigned int n;
+
+    n = _strspn(s, f);
+    printf("%u\n", n);
+    return (0);
+}
