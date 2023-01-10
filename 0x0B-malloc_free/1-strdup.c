@@ -25,7 +25,11 @@ while (*(str + i) != '\0')
 i++;
 }
 
-ptr = (char *) malloc(sizeof(char) * (i));
+ptr = (char *) malloc(sizeof(char) * (i + 1));
+if (ptr == NULL)
+{
+return (NULL);
+}
 for (; j < i; j++)
 {
 *(ptr + j) = str[j];
