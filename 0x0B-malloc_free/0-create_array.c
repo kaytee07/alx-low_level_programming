@@ -17,12 +17,12 @@ if (ptr == NULL)
 {
 return (0);
 }
- 
+
 for (; i < size; i++)
 {
 *(ptr + i) = c;
 }
-*(p + i) = c;
+*(ptr + i) = c;
 return (ptr);
 }
 
