@@ -13,7 +13,7 @@ char *str_concat(char *s1, char *s2)
 {
 int i = 0, j = 0, k, l = 0, size;
 char *ptr;
-if (!s1 || !s2)
+if (!s1 || !s2 || s1 == NULL || S2 == NULL)
 return (NULL);
 while (*(s1 + i) != '\0' || *(s2 + j) != '\0')
 {
@@ -35,7 +35,8 @@ if (ptr == NULL)
 {
 return (NULL);
 }
-*(ptr + (size - 1)) = '\0';
+
+*(ptr + (size)) = '\0';
 return (ptr);
 }
 
