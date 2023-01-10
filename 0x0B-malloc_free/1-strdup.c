@@ -30,7 +30,7 @@ for (; j < i; j++)
 {
 *(ptr + j) = str[j];
 }
-*(ptr + i) = '\0'
+*(ptr + i) = '\0';
 return (ptr);
 }
 
