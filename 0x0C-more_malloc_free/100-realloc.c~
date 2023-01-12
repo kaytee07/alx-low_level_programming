@@ -1,0 +1,39 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+
+/**
+ * _realloc -
+ * @ptr:pointer to the memory previously allocated
+ * @old_size: old_size is the sizeof the allocated space for ptr
+ * @new_size: is the new size, in bytes of the new memory block
+ * Return: pointer to dynamic memory
+ */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+{
+void *new_ptr;
+
+if (ptr == NULL)
+{
+new_ptr = malloc(new_size);
+return (new_ptr);
+}
+if (new_size == 0)
+{
+free(ptr);
+return (NULL);
+}
+if (new_size == old_size)
+{
+return (ptr);
+}
+new_ptr = malloc(new_size);
+if (new_size < old_size)
+{
+old_size = new_size;
+}
+memcpy(new_ptr, ptr, old_size);
+free(ptr);
+return (new_ptr);
+}
