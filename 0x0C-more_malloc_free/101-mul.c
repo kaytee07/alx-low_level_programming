@@ -1,134 +1,85 @@
-#include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+int check_valid_input(char *num1, char *num2);
+long int multiply(char *num1, char *num2);
+size_t _strlen(const char *s);
 
 /**
- * _memset - fills memory with a constant byte
- *
- * @s: input pointer that represents memory block
- *     to fill
- * @b: characters to fill/set
- * @n: number of bytes to be filled
- *
- * Return: pointer to the filled memory area
-*/
+ * main - multiplies two positive numbers
+ * @argc: number of command line input
+ * @argv: command line input array
+ * Return: 0 if succesful
+ */
 
-char *_memset(char *s, char b, unsigned int n)
-{
-unsigned int i = 0;
-
-while (i < n)
-{
-s[i] = b;
-i++;
-}
-return (s);
-}
-
-/**
- * _calloc - function that allocates memory
- *           for an array using memset
- *
- * @nmemb: size of array
- * @size: size of each element
- *
- * Return: pointer to new allocated memory
-*/
-
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-char *ptr;
-
-if (nmemb == 0 || size == 0)
-return (NULL);
-ptr = malloc(nmemb * size);
-if (ptr == NULL)
-return (NULL);
-_memset(ptr, 0, nmemb * size);
-
-return (ptr);
-}
-
-
-/**
- * multiply - initialize array with 0 byte
- *
- * @s1: string 1
- * @s2: string 2
- *
- * Return: nothing
-*/
-
-void multiply(char *s1, char *s2)
-{
-int i, l1, l2, total_l, f_digit, s_digit, res = 0, tmp;
-char *ptr;
-void *temp;
-
-l1 = _length(s1);
-l2 = _length(s2);
-tmp = l2;
-total_l = l1 + l2;
-ptr = _calloc(sizeof(int), total_l);
-
-
-temp = ptr;
-
-for (l1--; l1 >= 0; l1--)
-{
-f_digit = s1[l1] - '0';
-res = 0;
-l2 = tmp;
-for (l2--; l2 >= 0; l2--)
-{
-s_digit = s2[l2] - '0';
-res += ptr[l2 + l1 + 1] + (f_digit * s_digit);
-ptr[l1 + l2 + 1] = res % 10;
-res /= 10;
-}
-if (res)
-ptr[l1 + l2 + 1] = res % 10;
-}
-
-while (*ptr == 0)
-{
-ptr++;
-total_l--;
-}
-
-for (i = 0; i < total_l; i++)
-printf("%i", ptr[i]);
-printf("\n");
-free(temp);
-}
-
-
-/**
- * main - Entry point
- *
- * Description: a program that multiplies
- *            two positive numbers
- *
- * @argc: number of arguments
- * @argv: arguments array
- *
- * Return: 0 on success 98 on faliure
-*/
 
 int main(int argc, char *argv[])
 {
-char *n1 = argv[1];
-char *n2 = argv[2];
-
-if (argc != 3 || check_number(n1) || check_number(n2))
-error_exit();
-
-if (*n1 == '0' || *n2 == '0')
+long int result;
+if (argc != 3)
 {
-_putchar('0');
-_putchar('\n');
+printf("Error\n");
+exit(98);
 }
-else
-multiply(n1, n2);
+if (check_valid_input(argv[1], argv[2]) == 1)
+{
+printf("Error\n");
+exit(98);
+}
+result = multiply(argv[1], argv[2]);
+printf("%ld\n", result);
 return (0);
+}
+
+/**
+ * check_valid_input - check if parameters are positie integers
+ * @num1: first value to be multiplied
+ * @num2: second value to be multiplied
+ * Return: 0 if sucessfull and 1 if otherwise
+ */
+
+int check_valid_input(char *num1, char *num2)
+{
+size_t i;
+for (i = 0; i < _strlen(num1); i++)
+{
+if (!isdigit(num1[i]))
+return (1);
+}
+for (i = 0; i < _strlen(num2); i++)
+{
+if (!isdigit(num2[i]))
+return (1);
+}
+return (0);
+}
+
+
+/**
+ * multiply - multiplies parameters passed
+ * @num1: first parameter
+ * @num2: second parameter
+ * Return: return multiplication of both numbers
+ */
+long int multiply(char *num1, char *num2)
+{
+long int a = atol(num1);
+long int b = atol(num2);
+return (a * b);
+}
+
+/**
+ * _strlen - return the space occupied by the string
+ * @s: string to find the length for
+ * Return: size in byte
+ */
+
+
+size_t _strlen(const char *s)
+{
+size_t len = 0;
+while (*s++)
+len++;
+return (len);
 }
