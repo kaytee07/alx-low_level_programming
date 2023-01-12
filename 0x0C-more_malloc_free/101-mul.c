@@ -16,12 +16,7 @@ char *multiply(char *num1, char *num2);
 int main(int argc, char *argv[])
 {
 char *result;
-if (argc != 3)
-{
-printf("Error\n");
-exit(98);
-}
-if (check_valid_input(argv[1], argv[2]) == 1)
+if (argc != 3 || argv[1][0] == '-' || argv[2][0] == '-')
 {
 printf("Error\n");
 exit(98);
