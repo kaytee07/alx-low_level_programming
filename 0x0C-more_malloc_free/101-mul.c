@@ -1,103 +1,144 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-int check_valid_input(char *num1, char *num2);
-char *multiply(char *num1, char *num2);
 
 /**
- * main - multiplies two positive numbers
- * @argc: number of command line input
- * @argv: command line input array
- * Return: 0 if succesful
+ * _print - moves a string one place to the left and prints the string
+ * @str: string to move
+ * @l: size of string
+ *
+ * Return: void
  */
+void _print(char *str, int l)
+{
+int i, j;
 
+i = j = 0;
+while (i < l)
+{
+if (str[i] != '0')
+j = 1;
+if (j || i == l - 1)
+_putchar(str[i]);
+i++;
+}
 
-int main(int argc, char *argv[])
-{
-char *result;
-if (argc != 3)
-{
-printf("Error\n");
-exit(98);
+_putchar('\n');
+free(str);
 }
-if (check_valid_input(argv[1], argv[2]) == 1)
+
+/**
+ * mul - multiplies a char with a string and places the answer into dest
+ * @n: char to multiply
+ * @num: string to multiply
+ * @num_index: last non NULL index of num
+ * @dest: destination of multiplication
+ * @dest_index: highest index to start addition
+ *
+ * Return: pointer to dest, or NULL on failure
+ */
+char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 {
-printf("Error\n");
-exit(98);
+int j, k, mul, mulrem, add, addrem;
+
+mulrem = addrem = 0;
+for (j = num_index, k = dest_index; j >= 0; j--, k--)
+{
+mul = (n - '0') * (num[j] - '0') + mulrem;
+mulrem = mul / 10;
+add = (dest[k] - '0') + (mul % 10) + addrem;
+addrem = add / 10;
+dest[k] = add % 10 + '0';
 }
-result = multiply(argv[1], argv[2]);
-printf("%s\n", result);
-free(result);
+for (addrem += mulrem; k >= 0 && addrem; k--)
+{
+add = (dest[k] - '0') + addrem;
+addrem = add / 10;
+dest[k] = add % 10 + '0';
+}
+if (addrem)
+{
+return (NULL);
+}
+return (dest);
+}
+/**
+ * check_for_digits - checks the arguments to ensure they are digits
+ * @av: pointer to arguments
+ * Return: 0 if digits, 1 if not
+ */
+int check_for_digits(char **av)
+{
+int i, j;
+
+for (i = 1; i < 3; i++)
+{
+for (j = 0; av[i][j]; j++)
+{
+if (av[i][j] < '0' || av[i][j] > '9')
+return (1);
+}
+}
 return (0);
 }
 
 /**
- * check_valid_input - check if parameters is a digit
- * @num1: first parameter
- * @num2: second parameter
- * Return: 0 is successful
+ * init - initializes a string
+ * @str: sting to initialize
+ * @l: length of strinf
+ * Return: void
  */
-
-int check_valid_input(char *num1, char *num2)
+void init(char *str, int l)
 {
 int i;
-for (i = 0; i < (int) strlen(num1); i++)
-{
-if (!isdigit(num1[i]))
-return (1);
-}
-for (i = 0; i < (int) strlen(num2); i++)
-{
-if (!isdigit(num2[i]))
-return (1);
-}
-return (0);
+
+for (i = 0; i < l; i++)
+str[i] = '0';
+str[i] = '\0';
 }
 
 /**
- * multiply - multiplies parameters passed
- * @num1: first parameter
- * @num2: second parameter
- * Return: return multiplication of both numbers
+ * main - multiply two numbers
+ * @argc: number of arguments
+ * @argv: argument vector
+ * Return: zero, or exit status of 98 if failure
  */
+int main(int argc, char *argv[])
+{
+int l1, l2, ln, ti, i;
+char *a;
+char *t;
+char e[] = "Error\n";
 
-char *multiply(char *num1, char *num2)
+if (argc != 3 || check_for_digits(argv))
 {
-int i, j, k, carry = 0, num1Len, num2Len, productLen;
-int *product;
-char *result;
-num1Len = strlen(num1);
-num2Len = strlen(num2);
-productLen = num1Len + num2Len;
-product = (int *)malloc(productLen *sizeof(int));
-for (i = 0; i < productLen; i++)
-product[i] = 0;
-for (i = num1Len - 1; i >= 0; i--)
+for (ti = 0; e[ti]; ti++)
+_putchar(e[ti]);
+exit(98);
+}
+for (l1 = 0; argv[1][l1]; l1++)
+;
+for (l2 = 0; argv[2][l2]; l2++)
+;
+ln = l1 + l2 + 1;
+a = malloc(ln *sizeof(char));
+if (a == NULL)
 {
-carry = 0;
-k = productLen - (num1Len - i);
-for (j = num2Len - 1; j >= 0; j--)
+for (ti = 0; e[ti]; ti++)
+_putchar(e[ti]);
+exit(98);
+}
+init(a, ln - 1);
+for (ti = l2 - 1, i = 0; ti >= 0; ti--, i++)
 {
-product[k] += (num1[i] - '0') * (num2[j] - '0') + carry;
-carry = product[k] / 10;
-product[k] %= 10;
-k--;
-}
-product[k] += carry;
-}
-i = 0;
-while (i < productLen && product[i] == 0)
-i++;
-result = (char *)malloc((productLen - i + 1) * sizeof(char));
-j = 0;
-while (i < productLen)
+t = mul(argv[2][ti], argv[1], l1 - 1, a, (ln - 2) - i);
+if (t == NULL)
 {
-result[j++] = product[i++] + '0';
+for (ti = 0; e[ti]; ti++)
+_putchar(e[ti]);
+free(a);
+exit(98);
 }
-result[j] = '\0';
-free(product);
-return (result);
 }
-
-
+_print(a, ln - 1);
+return (0);
+}
