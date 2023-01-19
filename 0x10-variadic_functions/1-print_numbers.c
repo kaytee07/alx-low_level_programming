@@ -1,6 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
-
+#include "variadic_functions.h"
 /**
  * print_numbers - print numbers with a separator
  * @separator: this is printed after every nymber except the last
