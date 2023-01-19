@@ -1,16 +1,16 @@
+#include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include "variadic_functions.h"
 
 /**
- * print_all - print anything passed
- * @format: this is the data type of the argument to be printed out
- * @...: argument to be printed out
+ * print_all - print anything irrespective of datatyoe
+ * @format: these are the various data types
  *
  */
 
 void print_all(const char * const format, ...)
 {
+char *str;
 int i = 0;
 char *separator = "";
 va_list args;
@@ -29,13 +29,14 @@ case 'f':
 printf("%s%f", separator, va_arg(args, double));
 break;
 case 's':
-if (va_arg(args, char*) == NULL)
+str = va_arg(args, char*);
+if (str == NULL)
 {
 printf("%s(nil)", separator);
 }
 else
 {
-printf("%s%s", separator, va_arg(args, char*));
+printf("%s%s", separator, str);
 }
 break;
 default:
@@ -47,3 +48,5 @@ i++;
 printf("\n");
 va_end(args);
 }
+
+
