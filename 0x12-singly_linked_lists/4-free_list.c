@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
  * free_list - free memory occupied by linked list
@@ -8,16 +9,12 @@
 
 void free_list(list_t *head)
 {
-list_t *current = head;
-list_t *next;
+	list_t *current;
 
-while (current != NULL)
-{
-next = current->next;
-free(current->str);
-free(current);
-current = next;
+	while ((current = head) != NULL)
+	{
+		head = head->next;
+		free(current->str);
+		free(current);
+	}
 }
-head = NULL;
-}
-
