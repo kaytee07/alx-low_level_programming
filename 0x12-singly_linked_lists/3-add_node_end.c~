@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "lists.h"
+
+
+
+list_t *add_node_end(list_t **head, const char *str)
+{
+list_t *new;
+if (*head == NULL)
+return (NULL);
+
+new = malloc (sizeof(list_t));
+if (new == NULL)
+return (NULL);
+while ((*head)->next != NULL)
+{
+*head = (*head)->next;
+}
+new->str = strdup(str);
+new->len = strlen(str);
+new->next = (NULL);
+(*head)->next = new;
+return (new);
+}
+
