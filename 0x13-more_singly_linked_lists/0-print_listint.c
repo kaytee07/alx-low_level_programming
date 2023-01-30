@@ -13,14 +13,14 @@ void printnum(int a)
 
 if (a < 0)
 {
-putchar('-');
+_putchar('-');
 a = -a;
 }
 
 if (a / 10)
 printnum(a / 10);
 
-putchar(a % 10 + '0');
+_putchar(a % 10 + '0');
 }
 
 
@@ -40,7 +40,7 @@ while (h != NULL)
 {
 printnum(h->n);
 h = h->next;
-putchar('\n');
+_putchar('\n');
 i++;
 }
 return (i);
