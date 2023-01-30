@@ -12,10 +12,8 @@ int sum_listint(listint_t *head)
 {
 int total = 0;
 listint_t *temp;
-if (head == NULL)
-return (0);
 temp = head;
-while (temp->next != NULL)
+while (temp != NULL)
 {
 temp = temp->next;
 total += temp->n;

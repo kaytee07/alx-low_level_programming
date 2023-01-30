@@ -10,19 +10,16 @@
 
 void printnum(int a)
 {
-/* if number is smaller than 0 put a '-' sign */
-/* and change number to positive */
+
 if (a < 0)
 {
 putchar('-');
 a = -a;
 }
 
-/*recur till uou remove all last didgit*/
 if (a / 10)
 printnum(a / 10);
 
-/* print the last digit */
 putchar(a % 10 + '0');
 }
 
