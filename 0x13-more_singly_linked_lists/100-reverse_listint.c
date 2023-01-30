@@ -4,7 +4,7 @@
 
 /**
  * reverse_listint - singly linked list
- * head: head of linked list
+ * @head: head of linked list
  * Return: head
  */
 
