@@ -2,26 +2,6 @@
 #include <stdlib.h>
 #include "lists.h"
 
-/**
- * printnum - print number
- * @a: number to be printed
- *
- */
-
-void printnum(int a)
-{
-
-if (a < 0)
-{
-_putchar('-');
-a = -a;
-}
-
-if (a / 10)
-printnum(a / 10);
-
-_putchar(a % 10 + '0');
-}
 
 
 /**
@@ -38,9 +18,8 @@ return (0);
 
 while (h != NULL)
 {
-printnum(h->n);
+printf("%d\n", h->n);
 h = h->next;
-_putchar('\n');
 i++;
 }
 return (i);
