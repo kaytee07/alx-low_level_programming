@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "lists.h"
+/**
+ * print_listint - print the elements of all nodes
+ * @h: address to head of linked list
+ * Return: number of nodes
+ */
+
+listint_t *add_nodeint(listint_t **head, const int n)
+{
+listint_t *new;
+new = malloc(sizeof(listint_t));
+new->n = n;
+new->next = *head;
+*head = new;
+
+return (*head);
+}
+
+
+int main(void)
+{
+    listint_t *head;
+
+    head = NULL;
+    add_nodeint(&head, 0);
+    add_nodeint(&head, 1);
+    add_nodeint(&head, 2);
+    add_nodeint(&head, 3);
+    add_nodeint(&head, 4);
+    add_nodeint(&head, 98);
+    add_nodeint(&head, 402);
+    add_nodeint(&head, 1024);
+    print_listint(head);
+    return (0);
+}
