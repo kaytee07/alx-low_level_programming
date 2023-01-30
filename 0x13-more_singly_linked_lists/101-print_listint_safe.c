@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "lists.h"
 /**
  * print_listint_safe - print a linked list
  * @head: head node of linked list
