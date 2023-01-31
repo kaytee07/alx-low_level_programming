@@ -1,8 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-
 
 /**
  * free_listp2 - frees a linked list
