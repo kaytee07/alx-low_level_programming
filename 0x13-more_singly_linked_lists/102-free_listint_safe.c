@@ -2,11 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct listp_s
-{
-void *p;
-struct listp_s *next;
-} listp_t;
+
 
 /**
  * free_listp2 - frees a linked list
