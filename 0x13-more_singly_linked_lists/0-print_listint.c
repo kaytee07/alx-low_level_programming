@@ -3,24 +3,29 @@
 #include "lists.h"
 
 /**
- * printnum - print digit with putchar
- * @n: digit to print with putchar
+ * printnum - print number
+ * @a: number to be printed
  *
  */
-void printnum(int n)
+
+void printnum(int a)
 {
-if (n < 0)
+/* if number is smaller than 0 put a '-' sign */
+/* and change number to positive */
+if (a < 0)
 {
 putchar('-');
-n = -n;
+a = -a;
 }
 
-if (n / 10)
-printnum(n / 10);
+/*recur till uou remove all last didgit*/
+if (a / 10)
+printnum(a / 10);
 
-putchar(n % 10 + '0');
-putchar('\n');
+/* print the last digit */
+putchar(a % 10 + '0');
 }
+
 
 /**
  * print_listint - print the elements of all nodes
@@ -31,13 +36,15 @@ putchar('\n');
 size_t print_listint(const listint_t *h)
 {
 int i = 0;
+if (h == NULL)
+return (0);
 
 while (h != NULL)
 {
 printnum(h->n);
 h = h->next;
+putchar('\n');
 i++;
 }
-
 return (i);
 }
