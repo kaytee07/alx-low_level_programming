@@ -26,6 +26,6 @@ table->size = size;
 
 for (i = 0; i < table->size; i++)
 table->array[i] = NULL;
- 
+
 return (table);
 }
