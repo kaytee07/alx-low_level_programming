@@ -2,51 +2,6 @@
 #include <string.h>
 
 /**
- * create_node - this create a key value node that will be store in hashtable
- * @key: this is the key to be assigned in node->key
- * @value: this is the value to be assigned to the node-value
- * Return: returns the pointer to the created node or NULL if failure
- */
-
-hash_node_t *create_node(const char *key, const char *value)
-{
-hash_node_t *node;
-node = malloc(sizeof(hash_node_t));
-if (node == NULL)
-{
-free(node);
-return (NULL);
-}
-if (!key)
-return (NULL);
-
-if (!value)
-return (NULL);
-
-node->key = malloc(strlen(key) + 1);
-if (node->key == NULL)
-{
-free(node->key);
-free(node);
-return (NULL);
-}
-node->value = malloc(strlen(value) + 1);
-if (node->value == NULL)
-{
-free(node->key);
-free(node->value);
-free(node);
-return (NULL);
-}
-
-strcpy(node->key, key);
-strcpy(node->value, value);
-node->next = NULL;
-
-return (node);
-}
-
-/**
  * hash_table_set - this add element to the hash table
  * @ht: this is the hash table we'll be accessing and retrieving data from
  * @key: this key is used to generate the hash_code
@@ -56,44 +11,47 @@ return (node);
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-hash_node_t *node;
-unsigned long int hash_code;
-hash_node_t *current_node;
-if (!ht || !key || !*key)
+hash_node_t *new_node, *tmp_node;
+unsigned long int index;
+
+if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 return (0);
-node  = create_node(key, value);
-if (node == NULL)
+
+index = key_index((const unsigned char *)key, ht->size);
+tmp_node = ht->array[index];
+while (tmp_node)
+{
+if (strcmp(tmp_node->key, key) == 0)
+{
+free(tmp_node->value);
+tmp_node->value = strdup(value);
+if (tmp_node->value == NULL)
 return (0);
-hash_code = key_index((const unsigned char *) key, ht->size);
-current_node = ht->array[hash_code];
-if (current_node == NULL)
-{
-ht->array[hash_code] = node;
 return (1);
 }
-else if (strcmp(current_node->key, key) == 0)
+tmp_node = tmp_node->next;
+}
+new_node = malloc(sizeof(hash_node_t));
+if (new_node == NULL)
+return (0);
+new_node->key = strdup(key);
+if (new_node->key == NULL)
 {
-strcpy(ht->array[hash_code]->value, value);
+free(new_node);
 return (0);
 }
-else
+new_node->value = strdup(value);
+if (new_node->value == NULL)
 {
-while (current_node->next != NULL)
-{
-if (strcmp(current_node->key, key) == 0)
-{
-strcpy(current_node->value, value);
-free(node->key);
-free(node->value);
-free(node);
+free(new_node->key);
+free(new_node);
+return (0);
+}
+new_node->next = ht->array[index];
+ht->array[index] = new_node;
+
 return (1);
 }
-if (current_node->next == NULL)
-break;
-current_node = current_node->next;
-}
-current_node->next = node;
-return (1);
-}
-return (1);
-}
+
+
+
