@@ -15,16 +15,17 @@ if (size <= 0)
 return (NULL);
 
 table = malloc(sizeof(hash_table_t));
-if (!table)
+if (table == NULL)
 return (NULL);
 
 table->array = (hash_node_t **) calloc(size, sizeof(hash_node_t));
-if (!table->array)
+if (table->array == NULL)
 return (NULL);
 
 table->size = size;
 
 for (i = 0; i < table->size; i++)
 table->array[i] = NULL;
+ 
 return (table);
 }
