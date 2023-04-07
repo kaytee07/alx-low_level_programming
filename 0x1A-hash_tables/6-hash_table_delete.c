@@ -22,10 +22,10 @@ free(node->value);
 free(node);
 node = temp;
 }
- 
+
 }
 }
- 
+
 free(ht->array);
 free(ht);
 }
