@@ -20,12 +20,12 @@ return (NULL);
 
 table->array = (hash_node_t **) calloc(size, sizeof(hash_node_t));
 if (table->array == NULL)
+{
+free(table);
 return (NULL);
+}
 
 table->size = size;
-
-for (i = 0; i < table->size; i++)
-table->array[i] = NULL;
 
 return (table);
 }
