@@ -24,12 +24,6 @@ node = temp;
 }
  
 }
- else
-{
-  free(ht->array[j]);
-
-}
-
 }
  
 free(ht->array);
